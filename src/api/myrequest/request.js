@@ -1,4 +1,4 @@
-const BASE_URL = ''
+const BASE_URL = 'http://housekeapi.com/'
 let ajaxTimes = 0
 export const ajax = (options) => {
 	let header = {...options.header}

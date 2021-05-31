@@ -6,7 +6,7 @@
 				<input type="text" v-model="searchStr" placeholder="搜素"/>
 			</view>
 		</view>
-		<!-- <Site style="margin-top: 100px;"></Site> -->
+		<Site style="margin-top: 100px;"></Site>
 		<view class="content">
 			<view class="condition-box">
 				<view class="type-list" v-for="">
@@ -18,8 +18,12 @@
 </template>
 
 <script>
-	import Site from './data.js'
+	import Site from '@/components/site/site.vue'
+	// import Site from './data.js'
 	export default {
+		components: {
+			Site
+		},
 		data() {
 			return {
 				searchStr: '',

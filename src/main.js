@@ -6,6 +6,7 @@ Vue.config.productionTip = false
 Vue.prototype.$ajax = ajax
 App.mpType = 'app'
 
+import'@/static/iconfont/iconfont.css'
 const app = new Vue({
   ...App
 })

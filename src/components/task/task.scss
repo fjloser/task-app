@@ -1,0 +1,45 @@
+.container{
+	padding: 10px;
+	background: white;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	.task-top{
+		font-size: 12px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 10px;
+		.task-id{
+			text{
+				margin-right: 5px;
+			}
+		}
+		.task-status{
+			color: orange;
+		}
+	}
+	.task-name{
+		font-size: 14px;
+		font-weight: 550;
+		margin-bottom: 10px;
+	}
+	.price{
+		font-size: 12px;
+		color: gray;
+		margin-bottom: 10px;
+		text{
+			margin-right: 5px;
+		}
+	}
+	.task-bottom{
+		display: flex;
+		justify-content: flex-end;
+		.change-status{
+			padding: 5px 10px;
+			border-radius: 2px;
+			border: 1px solid orange;
+			font-size: 12px;
+			color: orange;
+		}
+	}
+}

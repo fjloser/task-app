@@ -1,0 +1,126 @@
+.container{
+	background-color: #eaeaea;
+	.task-mes{
+		padding: 0 5px;
+		background-color: white;
+		.swiper-box{
+			margin: 0 5px;
+			height: 300px;
+			// border: 1px solid;
+			.swiper{
+				width: 100%;
+				height: 100%;
+				.swiper-item{
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+}
+.mes-box{
+	margin: 10px 5px 0 5px;
+	.task-name{
+		font-size: 24px;
+		margin-bottom: 10px;
+	}
+	.task-price{
+		font-size: 26px;
+		color: orange;
+		margin-bottom: 10px;
+	}
+	.add-mes{
+		display: flex;
+		padding: 10px 0;
+		font-size: 14px;
+		color: gray;
+		border-top: 1px solid rgba(0, 0, 0, .1);
+		.add-mes-list{
+			flex: 1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			height: 50px;
+			text-align: center;
+			border-right: 1px solid rgba(0, 0, 0, .1);
+			.num{
+				margin-bottom: 5px;
+			}
+		}
+		.add-mes-list4{
+			border-right: 0;
+		}
+	}
+}
+.user-info{
+	display: flex;
+	align-items: center;
+	padding: 15px;
+	margin: 10px 0;
+	background-color: white;
+	.img-box{
+		width: 70px;
+		height: 70px;
+		margin-right: 10px;
+		image{
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.info-box{
+		flex: 1;
+		.user-name{
+			font-size: 16px;
+			margin-bottom: 5px;
+		}
+		.task-level{
+			font-size: 14px;
+			color: gray;
+			margin-bottom: 5px;
+		}
+		.site{
+			font-size: 14px;
+			color: gray;
+		}
+	}
+}
+.comment{
+	padding: 15px;
+	background-color: white;
+	.title{
+		font-size: 16px;
+		padding: 1px 0 1px 5px;
+		border-left: 3px solid orange;
+		margin-bottom: 10px;
+	}
+	.comment-list{
+		padding: 5px 0;
+		border-top: 1px solid rgba(0, 0, 0, .1);
+		.user-info-box{
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			margin-bottom: 10px;
+			.img-box{
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				margin-right: 10px;
+				overflow: hidden;
+				image{
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.user-name{
+				font-size: 14px;
+				color: gray;
+			}
+		}
+		.user-comment{
+			font-size: 14px;
+			color: gray;
+		}
+	}
+}

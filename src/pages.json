@@ -68,6 +68,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/taskDetail/taskDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

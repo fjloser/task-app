@@ -96,7 +96,6 @@ export default {
 			} else return colorItem.color;
 		},
 		getActiveColor(item, level) {
-			console.log(this.StackSelectList)
 			var colorItem = this.getColorItem(level);
 			if (item.value == this.StackSelectList[level].value) {
 				return colorItem.backgroundColorActive;

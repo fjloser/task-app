@@ -1,7 +1,7 @@
 .container{
 		position: relative;
 		padding: 0 30rpx;
-		background-color: #fafafa;
+		background-color: #eaeaea;
 		.search{
 			position: fixed;
 			width: 100%;
@@ -54,5 +54,233 @@
 		.service-list.active{
 			color: orangered;
 			border-bottom: 2px solid orangered;
+		}
+	}
+	.content{
+		margin-top: 124px;
+		// padding: 0 10px;
+		background: #ebebeb;
+		.type-list{
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-start;
+			padding: 10px;
+			background: white;
+			border-radius: 5px;
+			margin-top: 15px;
+			.img-box{
+				width: 80px;
+				height: 80px;
+				border-radius: 5px;
+				margin-right: 10px;
+				overflow: hidden;
+				image{
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.task-info{
+				flex: 1;
+				.task-name{
+					font-size: 16px;
+					font-weight: 550;
+					margin-bottom: 10px;
+				}
+				.price-box{
+					font-size: 16px;
+					font-weight: 550;
+					color: orange;
+					margin-bottom: 10px;
+					text{
+						font-size: 12px;
+					}
+					.comment-score{
+						color: gray;
+						margin-left: 10px;
+					}
+				}
+				.task-des{
+					width: 100%;
+					height: 32px;
+					padding: 3px;
+					border-radius: 3px;
+					background: #eaeaea;
+					font-size: 12px;
+					color: gray;
+					line-height: 16px;
+					overflow: hidden;
+					margin-bottom: 10px;
+				}
+				.other-mes{
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					font-size: 12px;
+					.site{
+						color: gray;
+					}
+					.detail{
+						padding: 3px 5px;
+						border-radius: 2px;
+						background-color: orange;
+						color: white;
+					}
+				}
+			}
+		}
+	}
+	.alert-box{
+		box-sizing: border-box;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		padding-top: 44px;
+		padding-bottom: 50px;
+		top: 0;
+		left: 0;
+		z-index: 100;
+		background-color: gray;
+		.alert-select{
+			box-sizing: border-box;
+			float: right;
+			width: 80%;
+			height: 100%;
+			padding: 10px;
+			padding-bottom: 50px;
+			background: white;
+			.type-name{
+				font-size: 14px;
+				// margin-bottom: 5px;
+			}
+			.price-content{
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				font-size: 12px;
+				margin: 5px 0;
+				input{
+					width: 50px;
+					padding: 10px 20px;
+					background-color: #eaeaea;
+					font-size: 12px;
+				}
+			}
+			.select-type{
+				.select-box{
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					flex-wrap: wrap;
+					font-size: 12px;
+					text-align: center;
+					.select-list{
+						box-sizing: border-box;
+						width: 160rpx;
+						height: 60rpx;
+						background-color: #ebebeb;
+						line-height: 60rpx;
+						margin: 5px;
+					}
+					.select-list.active{
+						position: relative;
+						border: 1px solid orangered;
+						background: orange;
+						color: orangered;
+					}
+					.active::after{
+						position: absolute;
+						bottom: 0;
+						right: 0;
+						content: '';
+						border: 7px solid;
+						border-color: transparent orangered orangered transparent;
+					}
+				}
+			}
+			.ensured{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				font-size: 12px;
+				text-align: center;
+				.ensured-list{
+					box-sizing: border-box;
+					width: 160rpx;
+					height: 60rpx;
+					background-color: #ebebeb;
+					line-height: 60rpx;
+					margin: 5px;
+				}
+				.ensured-list.active{
+					position: relative;
+					border: 1px solid orangered;
+					background: orange;
+					color: orangered;
+				}
+				.active::after{
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					content: '';
+					border: 7px solid;
+					border-color: transparent orangered orangered transparent;
+				}
+			}
+			.authentication{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				font-size: 12px;
+				text-align: center;
+				.authentication-list{
+					box-sizing: border-box;
+					width: 160rpx;
+					height: 60rpx;
+					background-color: #ebebeb;
+					line-height: 60rpx;
+					margin: 5px;
+				}
+				.authentication-list.active{
+					position: relative;
+					border: 1px solid orangered;
+					background: orange;
+					color: orangered;
+				}
+				.active::after{
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					content: '';
+					border: 7px solid;
+					border-color: transparent orangered orangered transparent;
+				}
+			}
+			.btn-box{
+				position: fixed;
+				bottom: 50px;
+				right: 0;
+				z-index: 200;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				width: 80%;
+				height: 40px;
+				line-height: 40px;
+				font-size: 32rpx;
+				background-color: white;
+				.cancel-btn{
+					flex: 1;
+					height: 100%;
+				}
+				.sure-btn{
+					flex: 1;
+					height: 100%;
+					background: orangered;
+					color: white;
+				}
+			}
 		}
 	}

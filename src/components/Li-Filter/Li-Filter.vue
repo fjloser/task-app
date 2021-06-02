@@ -43,7 +43,7 @@
 						></path>
 					</svg>
 				</view>
-				<view class="other-filter">
+				<view class="other-filter" @click="changeAlertFlag">
 					筛选<text class="iconfont icon-shaixuan"></text>
 				</view>
 			</view>
@@ -111,6 +111,9 @@ export default {
 		isFixtop: {
 			type: Boolean,
 			default: true
+		},
+		alertFlag: {
+			type: Boolean
 		}
 	},
 	data() {
@@ -133,6 +136,10 @@ export default {
 		this.init();
 	},
 	methods: {
+		changeAlertFlag(){
+			console.log(222)
+			this.$emit('changeAlertFlag')
+		},
 		init() {
 			try {
 				this.inside_data = this.datalist.data;

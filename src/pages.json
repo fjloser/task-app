@@ -77,6 +77,33 @@
             }
             
         }
+        ,{
+            "path" : "pages/edite/edite",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/sendTask/sendTask",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "提交任务",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+		    "path" : "pages/sendTaskList/sendTaskList",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "发布任务",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

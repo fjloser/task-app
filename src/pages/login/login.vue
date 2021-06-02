@@ -30,14 +30,15 @@
 			}
 		},
 		onLoad() {
-			// const {data: res} = this.$Ajax({
-			// 	url: 'api/goodList',
+			// this.run()
+			// const {data: res} = await this.$ajax({
+			// 	url: 'api/workUserList',
 			// 	data: {
 			// 		page: 1,
 			// 		size: 5,
-			// 		province: '四川',
-			// 		city: '成都',
-			// 		area: '玉林',
+			// 		province: '1',
+			// 		city: '2',
+			// 		area: '3',
 			// 		work_type: '1'
 			// 	}
 			// })
@@ -49,26 +50,23 @@
 					url: '../register/register'
 				})
 			},
-			login(){
-				console.log(2)
-				//  const {data: res} = await this.$ajax({
-				// 	 url: 'api/goodList',
-				// 	 	data: {
-				// 	 		page: 1,
-				// 	 		size: 5,
-				// 	 		province: '四川',
-				// 	 		city: '成都',
-				// 	 		area: '玉林',
-				// 	 		work_type: '1'
-				// 	 	}
-				//  })
-				// if(res.code != 200) return uni.showToast({
-				// 		title:'用户名或密码不正确',
-				// 		duration: 1500,
-				// 		icon:'none'
-				// 	});
-				// uni.setStorageSync('token',res.data.token)
-					// 登录成功跳转到首页
+			 async login(){
+				// console.log(2)
+				 const {data: res} =  await this.$ajax({
+					 url: '/api/login',
+					 	data: {
+					 		name: this.userName,
+							pw: this.password
+					 	}
+				 })
+				 console.log(res)
+				if(res.code != 200) return uni.showToast({
+						title:'用户名或密码不正确',
+						duration: 1500,
+						icon:'none'
+					});
+				uni.setStorageSync('token')
+					登录成功跳转到首页
 					uni.switchTab({
 						url: '../home/home'
 					})

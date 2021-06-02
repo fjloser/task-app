@@ -35,5 +35,5 @@
 </script>
 
 <style lang="scss" scoped>
-@import './order.scss'
+@import './send.scss'
 </style>

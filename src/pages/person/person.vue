@@ -45,14 +45,14 @@
 						</view>
 					</view>
 				</view>
-				<Task></Task>
+				<!-- <Task></Task> -->
 			</view>
 			<view class="setting-box">
 				<view class="title">
 					常用工具
 				</view>
 				<view class="setting">
-					<view class="icon-box" v-for="(ele,index) in setting" :key="index">
+					<view class="icon-box" v-for="(ele,index) in setting" :key="index" @click="navToSendTask(index)">
 						<text :class="ele.icon"></text>
 						<view class="title">
 							{{ele.name}}
@@ -66,11 +66,11 @@
 </template>
 
 <script>
-	import Task from '@/components/task/task'
+	// import Task from '@/components/task/task'
 	export default {
-		components:{
-			Task
-		},
+		// components:{
+		// 	Task
+		// },
 		data() {
 			return {
 				setting: [{icon: 'iconfont icon-woderenwu', name: '我的订单'},
@@ -93,6 +93,13 @@
 				uni.navigateTo({
 					url: '../order/order?index=' + i
 				})
+			},
+			navToSendTask(i){
+				if(i == 1){
+					uni.navigateTo({
+						url: '../sendTask/sendTask'
+					})
+				}
 			}
 		}
 	}

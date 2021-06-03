@@ -35,20 +35,18 @@
 					url: '../login/login'
 				})
 			},
-			register(){
-				async function request (){
+			async register(){
 					 const {data: res} = await this.$ajax({
-						 url: 'api/goodList',
+						 url: 'api/register',
 						 	data: {
-						 		page: 1,
-						 		size: 5,
-						 		province: '四川',
-						 		city: '成都',
-						 		area: '玉林',
-						 		work_type: '1'
+						 		name: this.userName,
+						 		pw: this.password,
+						 		type: 2
 						 	}
 					 })
-					if(res.code != 200) return uni.showToast({
+					 console.log(res)
+					 console.log(1)
+					if(res.code != 2000) return uni.showToast({
 							title:'注册失败',
 							duration: 1500,
 							icon:'none'
@@ -58,7 +56,6 @@
 							duration: 1500,
 							icon:'none'
 						});
-				}
 			}
 		},
 	}

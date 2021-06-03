@@ -60,15 +60,14 @@
 					 	}
 				 })
 				 console.log(res)
-				if(res.code != 200) return uni.showToast({
+				if(res.code != 2000) return uni.showToast({
 						title:'用户名或密码不正确',
 						duration: 1500,
 						icon:'none'
 					});
-				uni.setStorageSync('token')
-					登录成功跳转到首页
+				uni.setStorageSync('token', res.data.token)
 					uni.switchTab({
-						url: '../home/home'
+						url: '../person/person'
 					})
 			},
 		}

@@ -1,5 +1,6 @@
 .container{
 	background-color: #eaeaea;
+	padding-bottom: 55px;
 	.task-mes{
 		padding: 0 5px;
 		background-color: white;
@@ -119,8 +120,86 @@
 			}
 		}
 		.user-comment{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
 			font-size: 14px;
 			color: gray;
+			text{
+				color: orange;
+			}
+		}
+	}
+}
+.task-detail{
+	padding: 15px;
+	background-color: white;
+	.title{
+		font-size: 16px;
+		padding-left: 10px;
+		border-left: 2px solid orange;
+		margin-bottom: 10px;
+	}
+	.ql-container{
+		font-size: 13px;
+	}
+}
+.get-btn{
+	box-sizing: border-box;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 5;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 50px;
+	padding: 5px;
+	background-color: white;
+	border-top: 1px solid rgba(0, 0, 0, .1);
+	.colect{
+		color: gray;
+		text-align: center;
+		text{
+			font-size: 16px;
+		}
+		.title{
+			font-size: 12px;
+		}
+	}
+	.seek{
+		color: gray;
+		text-align: center;
+		text{
+			font-size: 16px;
+		}
+		.title{
+			font-size: 12px;
+		}
+	}
+	.btn-box{
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		width: 70%;
+		height: 30px;
+		// border: 1px solid;
+		border-radius: 4px;
+		font-size: 16px;
+		line-height: 30px;
+		text-align: center;
+		color: white;
+		overflow: hidden;
+		.seek-btn{
+			flex: 1;
+			height: 100%;
+			background: orange;
+		}
+		.recive-btn{
+			flex: 1;
+			height: 100%;
+			background-color: orangered;
 		}
 	}
 }

@@ -14,25 +14,25 @@
 		<liFilter @change="change" @select="select" :datalist="datalist" :height="height" :alertFlag="alertFlag" @changeAlertFlag="changeAlertFlag"></liFilter>
 		<view class="content">
 			<view class="condition-box">
-				<view class="type-list" v-for="(ele, index) in tasks" :key="index">
+				<view class="type-list" v-for="(ele, index) in tasks" :key="index" @click="navTotaskDetail(ele)">
 					<view class="img-box">
-						<image :src="ele.img" mode=""></image>
+						<image src="../../static/imgs/u=708482407,3295795161&fm=26&gp=0.jpg" mode=""></image>
 					</view>
 					<view class="task-info">
 						<view class="task-name">
-							{{ele.name}}
+							{{ele.content ? ele.content.title: ''}}
 						</view>
 						<view class="price-box">
 							<text>￥</text>
-							{{ele.price}}元
+							{{parseFloat(ele.money/100).toFixed(2)}}元
 							<text class="comment-score">3.4分</text>
 						</view>
 						<view class="task-des">
-							ikiioiiooo87888877
+							{{ele.remark}}
 						</view>
 						<view class="other-mes">
 							<view class="site">
-								{{ele.site}}
+								{{ele.address}}
 							</view>
 							<view class="detail">
 								查看详情
@@ -107,6 +107,7 @@
 		},  
 		data() {
 			return {
+				page: 1,
 				alertFlag: false,
 				serviceIndex: 0,
 				select1Index: [],
@@ -175,7 +176,29 @@
 			tempdata.data.push(sigleItem);
 			this.datalist = tempdata;
 		},
+		mounted: function(){
+			this.request()
+		},
 		methods: {
+			async request(){
+				console.log(1)
+				const {data: res} = await this.$ajax({
+					url: 'api/TaskList',
+					data: {
+						page: this.page,
+						size: '10',
+						province: '51',
+						city: '01',
+						area: '07',
+						work_type: 3
+					}
+				})
+				for(let i = 0; i < res.data.data.length; i++){
+					res.data.data[i].content = JSON.parse(res.data.data[i].content)
+				}
+				this.tasks = res.data.data
+				console.log(this.tasks)
+			},
 			change(e) {
 				// console.log('----------change----------');
 				// console.log(e);
@@ -198,6 +221,11 @@
 			},
 			changeAlertFlag(){
 				this.alertFlag = !this.alertFlag
+			},
+			navTotaskDetail(ele){
+				uni.navigateTo({
+					url: '../taskDetail/taskDetail?task=' + JSON.stringify(ele)
+				})
 			}
 		}
 	}

@@ -290,7 +290,7 @@ export default {
 	position: absolute;
 	background-color: white;
 	left: 0px;
-	top: 54px;
+	top: 35px;
 	z-index: 1;
 	width: 100%;
 }

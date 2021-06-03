@@ -60,6 +60,7 @@
 		margin-top: 124px;
 		// padding: 0 10px;
 		background: #ebebeb;
+		overflow: hidden;
 		.type-list{
 			display: flex;
 			justify-content: flex-start;
@@ -67,7 +68,7 @@
 			padding: 10px;
 			background: white;
 			border-radius: 5px;
-			margin-top: 15px;
+			margin: 15px 0;
 			.img-box{
 				width: 80px;
 				height: 80px;

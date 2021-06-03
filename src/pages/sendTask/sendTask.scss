@@ -1,10 +1,20 @@
 .top{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	padding: 15px 10px;
 	background: #ebebeb;
 	.title{
 		font-size: 20px;
 		padding-left: 10px;
 		border-left: 3px solid orange;
+	}
+	.submit{
+		padding: 5px 10px;
+		border-radius: 3px;
+		background: orange;
+		text-align: center;
+		font-size: 16px;
 	}
 }
 .container{
@@ -45,10 +55,41 @@
 		}
 	}
 }
-.edite{
-	font-size: 14px;
-	text-decoration: underline;
-	margin-top: 20px;
+.need-time{
+	margin-top: 10px;
 	padding: 10px;
 	background-color: #fafafa;
+	font-size: 14px;
+	.start-time{
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	.end-time{
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	.show-time{
+		display: inline-block;
+		width: 80px;
+		height: 24px;
+		line-height: 24px;
+		text-align: center;
+		color: gray;
+		border: 1px solid rgba(0, 0, 0, .1);
+		margin: 10px 20px;
+	}
+	.icon-rili{
+		font-size: 24px;
+		color: gray;
+	}
+}
+.edite{
+	margin-top: 20px;
+	font-size: 14px;
+	.title-btn{
+		text-decoration: underline;
+		margin-bottom: 10px;
+	}
 }

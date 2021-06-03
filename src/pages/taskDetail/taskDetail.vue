@@ -5,27 +5,27 @@
 				<swiper class="swiper" :indicator-dots="true" indicator-active-color="gray" :autoplay="false" :interval="1500"
 					:duration="500" :circular='true'>
 					<swiper-item>
-						<view class="swiper-item uni-bg-red">A</view>
+						<view class="swiper-item uni-bg-red"><image src="../../static/logo.png" mode="" style="width: 100%; height: 100%;"></image></view>
 					</swiper-item>
 					<swiper-item>
-						<view class="swiper-item uni-bg-green">B</view>
+						<view class="swiper-item uni-bg-green"><image src="../../static/logo.png" mode="" style="width: 100%; height: 100%;"></view>
 					</swiper-item>
 					<swiper-item>
-						<view class="swiper-item uni-bg-blue">C</view>
+						<view class="swiper-item uni-bg-blue"><image src="../../static/logo.png" mode="" style="width: 100%; height: 100%;"></view>
 					</swiper-item>
 				</swiper>
 			</view>
 			<view class="mes-box">
 				<view class="task-name">
-					logo谁设计
+					{{task.content.title}}
 				</view>
 				<view class="task-price">
-					<text>￥</text>8888887
+					<text>￥</text>{{parseFloat(task.money/100).toFixed(2)}}
 				</view>
 				<view class="add-mes">
 					<view class="add-mes-list1 add-mes-list">
 						<view class="num">
-							2
+							{{startTime}}
 						</view>
 						<view class="name">
 							开始时间
@@ -33,7 +33,7 @@
 					</view>
 					<view class="add-mes-list2 add-mes-list">
 						<view class="num">
-							5
+							{{endTime}}
 						</view>
 						<view class="name">
 							结束时间
@@ -44,15 +44,15 @@
 							555
 						</view>
 						<view class="name">
-							tttt
+							评分
 						</view>
 					</view>
 					<view class="add-mes-list4 add-mes-list">
 						<view class="num">
-							而二人
+							2
 						</view>
 						<view class="name">
-							哈弗uu
+							任务人数
 						</view>
 					</view>
 				</view>
@@ -71,7 +71,7 @@
 					任务难度: 中等
 				</view>
 				<view class="site">
-					成都
+					{{task.address}}
 				</view>
 			</view>
 		</view>
@@ -89,7 +89,44 @@
 					</view>
 				</view>
 				<view class="user-comment">
-					十分满意
+					<view>
+						十分满意
+					</view>
+					<view>
+						<text class="iconfont icon-add"></text>
+						<text class="iconfont icon-add"></text>
+						<text class="iconfont icon-add"></text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="task-detail">
+			<view class="title">
+				服务详情
+			</view>
+			<view class="ql-container">
+				<rich-text :nodes="task.content.richText"></rich-text>
+			</view>
+		</view>
+		<view class="get-btn">
+			<view class="colect">
+				<text class="iconfont icon-add"></text>
+				<view class="title">
+					收藏
+				</view>
+			</view>
+			<view class="seek">
+				<text class="iconfont icon-dianhuazixun"></text>
+				<view class="title">
+					电话咨询
+				</view>
+			</view>
+			<view class="btn-box">
+				<view class="seek-btn">
+					在线咨询
+				</view>
+				<view class="recive-btn" @click="addTask">
+					接受任务
 				</view>
 			</view>
 		</view>
@@ -100,11 +137,41 @@
 	export default {
 		data() {
 			return {
-
+				task: '',
+				startTime: '',
+				endTime: '',
 			}
 		},
+		onLoad(options){
+			
+			this.task = JSON.parse(options.task)
+			let time = new Date(parseInt(this.task.start_time)*1000)
+			let time1 = new Date(parseInt(this.task.end_time)*1000)
+			this.startTime = time.getFullYear() + '-' + (time.getMonth() + 1) + '-' + time.getDate()
+			this.endTime = time1.getFullYear() + '-' + (time1.getMonth() + 1) + '-' + time1.getDate()
+		},
 		methods: {
-
+			async addTask(){
+				const {data: res} = await this.$ajax({
+					url: 'api/getTask',
+					data: {
+						token: uni.getStorageSync('token'),
+						work_id: this.task.work_id
+					}
+				})
+				console.log(res)
+				if(res.code != 2000) return uni.showToast({
+						title:'任务已被接取',
+						duration: 1500,
+						icon:'none'
+					});
+				uni.showToast({
+						title:'接取成功',
+						duration: 1500,
+						icon:'none'
+					});
+				
+			}
 		}
 	}
 </script>

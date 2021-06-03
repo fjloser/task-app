@@ -104,6 +104,15 @@
 		    }
 		    
 		}
+        ,{
+            "path" : "pages/blank/blank",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

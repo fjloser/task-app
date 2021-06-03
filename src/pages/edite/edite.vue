@@ -80,22 +80,6 @@
 				formats: {}
 			}
 		},
-		mounted: function(){
-			 // let pages = getCurrentPages()
-			 // let curPage = pages[pages.length-1]
-			 // this.html = curPage.options.html || curPage.$route.query.html;
-			 // console.log(this.html)
-			 // console.log(this)
-			 // if(this.html){
-				//  this.editorCtx.setContents({
-				//  	'html': this.html
-				//  })
-			 // }
-			 // console.log(this.editorCtx)
-			 // this.editorCtx.setContents({
-			 // 	'html': this.html
-			 // })
-		},
 		methods: {
 			getHtml(id) {
 							this.editorCtx.getContents({
@@ -114,12 +98,10 @@
 				
 				uni.createSelectorQuery().select('#editor').context((res) => {
 					this.editorCtx = res.context
-					console.log(this.html)
 					let pages = getCurrentPages()
 					let curPage = pages[pages.length-1]
 					this.html = curPage.options.html || curPage.$route.query.html;
 					if(this.html){
-						console.log('huixian')
 						this.editorCtx.setContents({
 							html: this.html
 						})
@@ -148,14 +130,14 @@
 			insertDivider() {
 				this.editorCtx.insertDivider({
 					success: function() {
-						console.log('insert divider success')
+						// console.log('insert divider success')
 					}
 				})
 			},
 			clear() {
 				this.editorCtx.clear({
 					success: function(res) {
-						console.log("clear success")
+						// console.log("clear success")
 					}
 				})
 			},
@@ -177,7 +159,7 @@
 							src: res.tempFilePaths[0],
 							alt: '图像',
 							success: function() {
-								console.log('insert image success')
+								// console.log('insert image success')
 							}
 						})
 					}

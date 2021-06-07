@@ -6,19 +6,21 @@
 			</view>
 		</view>
 		<view class="task-box">
-			<Task :tabIndex="tabIndex"></Task>
+			<sendTask :tabIndex="tabIndex"></sendTask>
 		</view>
 	</view>
 </template>
 
 <script>
-	import Task from '@/components/task/task.vue'
+	import sendTask from '@/components/sendTask/sendTask.vue'
 	export default {
 		components:{
-			Task
+			sendTask
 		},
 		onLoad:function(options){
-			this.tabIndex = options.index
+		},
+		mounted: function(){
+			console.log(this.tabIndex)
 		},
 		data() {
 			return {

@@ -22,10 +22,16 @@
 						<view class="task-name">
 							{{ele.content ? ele.content.title: ''}}
 						</view>
+						<view class="tag">
+							<text>三套方案选择</text>
+							<text>一万个抉择</text>
+							<text>到死不给钱</text>
+						</view>
 						<view class="price-box">
 							<text>￥</text>
 							{{parseFloat(ele.money/100).toFixed(2)}}元
-							<text class="comment-score">3.4分</text>
+							<text class="comment-score">销量: 1255</text>
+							<text class="comment-score">评分: 3.4分</text>
 						</view>
 						<view class="task-des">
 							{{ele.remark}}
@@ -118,16 +124,16 @@
 				height: 0.6,
 				searchStr: '',
 				service: ['服务', '案例', '店铺'],
-				selectArr: [{type: '行业', arr: ['11', '22', '98', '88', '44', '11', '22', '98', '88', '11', '22', '98', '88', '11', '22', '98', '88', '11', '22', '98', '88']},
-				{type: '主题', arr: ['11', '22', '98', '88', '44', '11', '22', '98', '88', '11', '22', '98', '88', '11', '22', '98', '88', '11', '22', '98', '88']}],
-				ensured: ['888', '888', '999', '9055', '888', '888', '999', '9055', '888', '888', '999', '9055', '888', '888', '999', '9055',],
-				authentication: ['22', '44', '344'],
+				// selectArr: [{type: '行业', arr: ['11', '22', '98', '88', '44', '11', '22', '98', '88', '11', '22', '98', '88', '11', '22', '98', '88', '11', '22', '98', '88']},
+				// {type: '主题', arr: ['11', '22', '98', '88', '44', '11', '22', '98', '88', '11', '22', '98', '88', '11', '22', '98', '88', '11', '22', '98', '88']}],
+				// ensured: ['888', '888', '999', '9055', '888', '888', '999', '9055', '888', '888', '999', '9055', '888', '888', '999', '9055',],
+				// authentication: ['22', '44', '344'],
 				tasks: [
-					{img: '../../static/imgs/u=708482407,3295795161&fm=26&gp=0.jpg', name: 'logo设计', price: 299, mes: '好好好', site: '成都'},
-					{img: '../../static/imgs/u=708482407,3295795161&fm=26&gp=0.jpg', name: 'logo设计', price: 299, mes: '好好好', site: '成都'},
-					{img: '../../static/imgs/u=708482407,3295795161&fm=26&gp=0.jpg', name: 'logo设计', price: 299, mes: '好好好', site: '成都'},
-					{img: '../../static/imgs/u=708482407,3295795161&fm=26&gp=0.jpg', name: 'logo设计', price: 299, mes: '好好好', site: '成都'},
-					{img: '../../static/imgs/u=708482407,3295795161&fm=26&gp=0.jpg', name: 'logo设计', price: 299, mes: '好好好', site: '成都'}
+					// {img: '../../static/imgs/u=708482407,3295795161&fm=26&gp=0.jpg', name: 'logo设计', price: 299, mes: '好好好', site: '成都'},
+					// {img: '../../static/imgs/u=708482407,3295795161&fm=26&gp=0.jpg', name: 'logo设计', price: 299, mes: '好好好', site: '成都'},
+					// {img: '../../static/imgs/u=708482407,3295795161&fm=26&gp=0.jpg', name: 'logo设计', price: 299, mes: '好好好', site: '成都'},
+					// {img: '../../static/imgs/u=708482407,3295795161&fm=26&gp=0.jpg', name: 'logo设计', price: 299, mes: '好好好', site: '成都'},
+					// {img: '../../static/imgs/u=708482407,3295795161&fm=26&gp=0.jpg', name: 'logo设计', price: 299, mes: '好好好', site: '成都'}
 				]
 			}
 		},
@@ -190,9 +196,10 @@
 						province: '51',
 						city: '01',
 						area: '07',
-						work_type: 3
+						work_type: 20
 					}
 				})
+				console.log(res)
 				for(let i = 0; i < res.data.data.length; i++){
 					res.data.data[i].content = JSON.parse(res.data.data[i].content)
 				}

@@ -21,9 +21,22 @@
 }
 .mes-box{
 	margin: 10px 5px 0 5px;
+	.tag{
+		margin-bottom: 10px;
+		text{
+			display: inline-block;
+			padding: 2px 5px;
+			border-radius: 4px;
+			border: 1px solid orange;
+			font-size: 12px;
+			line-height: 14px;
+			color: orangered;
+			margin-right: 5px;
+		}
+	}
 	.task-name{
 		font-size: 24px;
-		margin-bottom: 10px;
+		// margin-bottom: 10px;
 	}
 	.task-price{
 		font-size: 26px;
@@ -94,6 +107,20 @@
 		padding: 1px 0 1px 5px;
 		border-left: 3px solid orange;
 		margin-bottom: 10px;
+	}
+	.tag{
+		margin-bottom: 10px;
+		text{
+			display: inline-block;
+			padding: 2px 10px;
+			border-radius: 10px;
+			background-color: #ffeadc;
+			font-size: 10px;
+			color: orangered;
+			margin-right: 10px;
+			margin-bottom: 10px;
+			white-space: nowrap;
+		}
 	}
 	.comment-list{
 		padding: 5px 0;
@@ -183,11 +210,11 @@
 		justify-content: flex-start;
 		align-items: center;
 		width: 70%;
-		height: 30px;
+		height: 35px;
 		// border: 1px solid;
 		border-radius: 4px;
 		font-size: 16px;
-		line-height: 30px;
+		line-height: 35px;
 		text-align: center;
 		color: white;
 		overflow: hidden;

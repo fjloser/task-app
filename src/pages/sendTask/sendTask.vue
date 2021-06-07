@@ -90,6 +90,13 @@
 			if (this.endTimex) this.endTime = this.endTimex;
 			this.startTime = this.getTime()
 		},
+		onBackPress(e){
+			// console.log(e)
+			uni.switchTab({
+				url:'../person/person'
+			})
+			return true
+		},
 		methods: {
 			...mapMutations({
 				changeTitle: 'changeTitle'
@@ -162,6 +169,16 @@
 					}
 				})
 				console.log(res)
+				if(res.code == 3000) return uni.showToast({
+					title:'请登录',
+					duration: 1500,
+					icon:'none'
+				})
+				if(res.code == 3002) return uni.showToast({
+					title:'登录失效，请重新登录',
+					duration: 1500,
+					icon:'none'
+				})
 				this.changeTitle({
 					title: this.title,
 					des: this.des,

@@ -1,6 +1,17 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+		    "path" : "pages/home/home",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "任务列表",
+				"navigationBarBackgroundColor":"orange",
+				"navigationBarTextStyle":"white",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
 			"path": "pages/login/login",
 			"style": {
 				"navigationBarTitleText": "登录"
@@ -12,22 +23,11 @@
 				"navigationBarTitleText": "注册"
 			}
 		}
-	    ,{
-            "path" : "pages/home/home",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "任务列表",
-				"navigationBarBackgroundColor":"orange",
-				"navigationBarTextStyle":"white",
-                "enablePullDownRefresh": false
-            }
-            
-        }
         ,{
             "path" : "pages/person/person",
             "style" :                                                                                   
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "个人中心",
                 "enablePullDownRefresh": false
             }
             
@@ -72,7 +72,7 @@
             "path" : "pages/taskDetail/taskDetail",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "任务详情",
                 "enablePullDownRefresh": false
             }
             
@@ -99,20 +99,11 @@
 		    "path" : "pages/sendTaskList/sendTaskList",
 		    "style" :                                                                                    
 		    {
-		        "navigationBarTitleText": "发布任务",
+		        "navigationBarTitleText": "我发布的任务",
 		        "enablePullDownRefresh": false
 		    }
 		    
 		}
-        ,{
-            "path" : "pages/blank/blank",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

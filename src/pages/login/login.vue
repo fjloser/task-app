@@ -66,6 +66,8 @@
 						icon:'none'
 					});
 				uni.setStorageSync('token', res.data.token)
+				uni.setStorageSync('user_id', res.data.user_id+'')
+				uni.setStorageSync('userName', res.data.user_account)
 					uni.switchTab({
 						url: '../person/person'
 					})

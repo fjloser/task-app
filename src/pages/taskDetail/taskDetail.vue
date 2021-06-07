@@ -19,8 +19,13 @@
 				<view class="task-name">
 					{{task.content.title}}
 				</view>
+				<view class="tag">
+					<text>三套方案选择</text>
+					<text>一万个抉择</text>
+					<text>到死不给钱</text>
+				</view>
 				<view class="task-price">
-					<text>￥</text>{{parseFloat(task.money/100).toFixed(2)}}
+					<text>￥</text>{{parseFloat(task.money/100).toFixed(2)}}<text>元</text>
 				</view>
 				<view class="add-mes">
 					<view class="add-mes-list1 add-mes-list">
@@ -79,13 +84,23 @@
 			<view class="title">
 				客户评价
 			</view>
-			<view class="comment-list">
+			<view class="tag">
+				<text>沟通流畅(8888)</text>
+				<text>严禁认证(72763)</text>
+				<text>有创新(8888)</text>
+				<text>交付准时(72763)</text>
+				<text>专业的鹅鹅鹅准时(8888)</text>
+				<text>专业水平(72763)</text>
+				<text>沟通顶顶顶顶流畅(8888)</text>
+				<text>认证多次(72763)</text>
+			</view>
+			<view class="comment-list" v-for="(ele, index) in '123'" :key="index">
 				<view class="user-info-box">
 					<view class="img-box">
 						<image src="../../static/imgs/u=708482407,3295795161&fm=26&gp=0.jpg" mode=""></image>
 					</view>
 					<view class="user-name">
-						8574777
+						suehueheuh-sjue
 					</view>
 				</view>
 				<view class="user-comment">
@@ -145,6 +160,7 @@
 		onLoad(options){
 			
 			this.task = JSON.parse(options.task)
+			console.log(this.task)
 			let time = new Date(parseInt(this.task.start_time)*1000)
 			let time1 = new Date(parseInt(this.task.end_time)*1000)
 			this.startTime = time.getFullYear() + '-' + (time.getMonth() + 1) + '-' + time.getDate()
@@ -152,6 +168,11 @@
 		},
 		methods: {
 			async addTask(){
+				if(this.task.user_id == uni.getStorageSync('user_id')) return uni.showToast({
+					title:'任务是你的，不能接取',
+					duration: 2000,
+					icon:'none'
+				})
 				const {data: res} = await this.$ajax({
 					url: 'api/getTask',
 					data: {
@@ -160,6 +181,16 @@
 					}
 				})
 				console.log(res)
+				if(res.code == 3000) return uni.showToast({
+					title:'请登录',
+					duration: 1500,
+					icon:'none'
+				});
+				if(res.code == 3002) return uni.showToast({
+					title:'登录失效，请重新登录',
+					duration: 1500,
+					icon:'none'
+				});
 				if(res.code != 2000) return uni.showToast({
 						title:'任务已被接取',
 						duration: 1500,
@@ -178,4 +209,7 @@
 
 <style lang="scss" scoped>
 @import './taskDetail.scss';
+.ql-container{
+	overflow: visible!important;
+}
 </style>

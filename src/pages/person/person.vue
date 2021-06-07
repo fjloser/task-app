@@ -1,12 +1,27 @@
 <template>
 	<view class="container">
-		<view class="login-box">
+		<view class="login-box" v-if="login">
 			<view class="user-mes-box">
 				<view class="img-box">
 					<image src="../../static/imgs/u=708482407,3295795161&fm=26&gp=0.jpg" mode="" ></image>
 				</view>
 				<view class="userName">
-					888877
+					{{userName}}
+				</view>
+			</view>
+			<view class="iconfont-box">
+				<text class="iconfont icon-xiaoxi"></text>
+				<text class="iconfont icon-shezhi"></text>
+				<text class="iconfont icon-tuichu" @click="exit()"></text>
+			</view>
+		</view>
+		<view class="login-box" v-if="!login" @click="navToLogin">
+			<view class="user-mes-box">
+				<view class="img-box">
+					<image src="../../static/imgs/u=2862464235,2953063410&fm=26&gp=0.jpg" mode="" ></image>
+				</view>
+				<view class="userName" style="color: white;">
+					登录/注册
 				</view>
 			</view>
 			<view class="iconfont-box">
@@ -73,7 +88,9 @@
 		// },
 		data() {
 			return {
-				setting: [{icon: 'iconfont icon-woderenwu', name: '我的订单'},
+				userName: '',
+				login: false,
+				setting: [{icon: 'iconfont icon-woderenwu', name: '我发布的任务'},
 				{icon: 'iconfont icon-faburenwu', name: '发布任务'},
 				{icon: 'iconfont icon-kefu', name: '官方客服'},
 				{icon: 'iconfont icon-yijian', name: '意见反馈'},
@@ -88,6 +105,13 @@
 				]
 			}
 		},
+		onLoad(options){
+			console.log(options)
+		},
+		onShow(){
+			uni.getStorageSync('token') ? this.login = true : this.login = false
+			uni.getStorageSync('userName') ? this.userName = uni.getStorageSync('userName') : this.userName = '88557744'
+		},
 		methods: {
 			navToOrder(i){
 				uni.navigateTo({
@@ -95,11 +119,25 @@
 				})
 			},
 			navToSendTask(i){
-				if(i == 1){
+				console.log(i)
+				if(i == 0){
+					uni.navigateTo({
+						url: '../sendTaskList/sendTaskList'
+					})
+				}else if(i == 1){
 					uni.navigateTo({
 						url: '../sendTask/sendTask'
 					})
 				}
+			},
+			navToLogin(){
+				uni.navigateTo({
+					url: '../login/login'
+				})
+			},
+			exit(){
+				uni.removeStorageSync('token')
+				this.login = false
 			}
 		}
 	}

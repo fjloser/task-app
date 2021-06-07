@@ -47,7 +47,7 @@
 					 console.log(res)
 					 console.log(1)
 					if(res.code != 2000) return uni.showToast({
-							title:'注册失败',
+							title:'账号已存在',
 							duration: 1500,
 							icon:'none'
 						});

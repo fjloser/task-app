@@ -1,6 +1,6 @@
 <template>
 	<view class="filter-content" v-bind:style="{ position: fixedTop == true || isFixtop ? 'fixed' : '',
-		 top: fixedTop == true || isFixtop  ? inside_windowTop + 90 + 'px' : '', left: 0 }">
+		 top: fixedTop == true || isFixtop  ? 90 + 'px' : '', left: 0 }">
 			<view class="filter-title filterLine">
 				<view
 					class="filter-title-item"
@@ -10,38 +10,16 @@
 					v-bind:class="{ 'filter-title-item-active': SelectItem.value == titleItem.value }"
 				> 
 					{{ titleTextList[index] }}
-					<svg
-						t="1584538181539"
+					<text
 						v-show="SelectItem.value == titleItem.value && inside_show && titleItem.type!=0"
-						class="filter-icon"
-						style="width: 10px; height: 10px; margin-left: 5px; margin-bottom: 6px;"
-						version="1.1"
-						xmlns="http://www.w3.org/2000/svg"
-						p-id="7019"
+						class="filter-icon iconfont icon-shangjiantou"
 					>
-						<path
-							d="M 0 10 L 5 5 L 10 10"
-							stroke='gray'
-							fill=none
-							p-id="7020"
-						></path>
-					</svg>
-					<svg
-						t="1584538216305"
+					</text>
+					<text
 						v-show="(SelectItem.value != titleItem.value || !inside_show) && titleItem.type!=0"
-						class="filter-icon"
-						style="width: 10px; height: 10px; margin-left: 5px; margin-top: 6px;"
-						version="1.1"
-						xmlns="http://www.w3.org/2000/svg"
-						p-id="7748"
+						class="filter-icon iconfont icon-shanglajiantou"
 					>
-						<path
-							d="M 0 0 L 5 5 L 10 0"
-							stroke='gray'
-							fill=none
-							p-id="7749"
-						></path>
-					</svg>
+					</text>
 				</view>
 				<view class="other-filter" @click="changeAlertFlag">
 					筛选<text class="iconfont icon-shaixuan"></text>
@@ -282,8 +260,8 @@ export default {
 }
 
 .filter-icon {
-	height: 14px;
-	height: 14px;
+	color: gray;
+	margin-left: 5px
 }
 
 .filter-area {
@@ -303,6 +281,7 @@ export default {
 	justify-content: center;
 	align-items: center;
 	/* flex-grow: 1; */
+	line-height: 16px;
 	text-align: center;
 	padding: 10px;
 	white-space: nowrap;

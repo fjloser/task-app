@@ -118,13 +118,13 @@
 	    "backgroundColor": "#ffffff",
 	    "list": [{
 	        "pagePath": "pages/home/home",
-	        "iconPath": "static/imgs/home1.svg",
-	        "selectedIconPath": "static/imgs/home.svg",
+	        "iconPath": "static/imgs/home.png",
+	        "selectedIconPath": "static/imgs/home1.png",
 	        "text": "任务列表"
 	    }, {
 	        "pagePath": "pages/person/person",
-	        "iconPath": "static/imgs/person1.svg",
-	        "selectedIconPath": "static/imgs/person.svg",
+	        "iconPath": "static/imgs/person.png",
+	        "selectedIconPath": "static/imgs/person1.png",
 	        "text": "个人中心"
 	    }]
 	}
